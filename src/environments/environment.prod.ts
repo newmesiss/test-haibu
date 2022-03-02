@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  url:'https://my-json-server.typicode.com/HaibuSolutions/prueba-tecnica-sf'
+
 };
