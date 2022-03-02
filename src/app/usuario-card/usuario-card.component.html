@@ -1,52 +1,40 @@
 <mat-dialog-content>
-  <!-- This is an example component -->
-  <div class=" flex flex-row justify-between w-full">
+  <div class=" flex flex-row justify-between  right-1 ">
     <div></div>
     <button mat-icon-button color="primary" class="" (click)="dialogRef.close()">
       <mat-icon>close</mat-icon>
     </button>
   </div>
   <div class="w-full">
-    <div class="text-center p-6  border-b">
-
-      <p class="pt-2 text-lg font-semibold">{{data.usuario.nombre}} {{data.usuario.apellido}}</p>
+    <div class="text-center px-6  border-b">
+      <p class=" text-lg font-semibold">{{data.usuario.nombre}} {{data.usuario.apellido}}</p>
       <div class="text-sm text-gray-600" [ngClass]="{'text-red-500': !validaRut(data.usuario.rut)}">
         {{formatRut(data.usuario.rut)}}</div>
       <div class="text-red-500" *ngIf="!validaRut(data.usuario.rut)">El rut no es válido</div>
-
     </div>
-      <div class=" py-2  flex flex-col gap-3">
-
-        <div class="flex flex-row gap-1 border-b py-2 ">
-          <div class=" w-2/12">
-            <mat-icon class="mat-18">date_range</mat-icon>
-          </div>
-          <div class=" flex flex-col gap-1">
-            <div class="text-sm font-medium text-gray-800 leading-none" [ngClass]="{' text-red-500': !validateDate(data.usuario.fechaNacimiento)}">Fecha nacimiento</div>
-            <div class="text-xs text-gray-500" [ngClass]="{'text-red-500': !validateDate(data.usuario.fechaNacimiento)}">{{data.usuario.fechaNacimiento}}</div>
-            <div class="text-xs text-red-500 " *ngIf="!validateDate(data.usuario.fechaNacimiento)">Fecha inválida</div>
-
-          </div>
-
+    <div class=" py-2  flex flex-col gap-3">
+      <div class="flex flex-row gap-1 border-b py-2 ">
+        <div class=" w-2/12">
+          <mat-icon class="mat-18">date_range</mat-icon>
         </div>
-
-
-        <div class="flex flex-row gap-1 border-b py-2 ">
-          <div class=" w-2/12">
-            <mat-icon class="mat-18">home</mat-icon>
-          </div>
-          <div class=" flex flex-col gap-1">
-            <div class="text-sm font-medium text-gray-800 leading-none">Dirección</div>
-            <div class="text-xs text-gray-500">{{data.usuario.direccion.calle}} {{data.usuario.direccion.numero}} {{data.usuario.direccion.comuna}}</div>
-          </div>
-
+        <div class=" flex flex-col gap-1">
+          <div class="text-sm font-medium text-gray-800 leading-none"
+            [ngClass]="{' text-red-500': !validateDate(data.usuario.fechaNacimiento)}">Fecha nacimiento</div>
+          <div class="text-xs text-gray-500" [ngClass]="{'text-red-500': !validateDate(data.usuario.fechaNacimiento)}">
+            {{data.usuario.fechaNacimiento}}</div>
+          <div class="text-xs text-red-500 " *ngIf="!validateDate(data.usuario.fechaNacimiento)">Fecha inválida</div>
         </div>
-
       </div>
-
-
-
-
+      <div class="flex flex-row gap-1 border-b py-2 ">
+        <div class=" w-2/12">
+          <mat-icon class="mat-18">home</mat-icon>
+        </div>
+        <div class=" flex flex-col gap-1">
+          <div class="text-sm font-medium text-gray-800 leading-none">Dirección</div>
+          <div class="text-xs text-gray-500">{{data.usuario.direccion.calle}} {{data.usuario.direccion.numero}}
+            {{data.usuario.direccion.comuna}}</div>
+        </div>
+      </div>
+    </div>
   </div>
-
 </mat-dialog-content>
