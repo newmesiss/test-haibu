@@ -4,8 +4,10 @@
     <img src="assets/logo-haibu.png" alt="">
   </div>
   <div class="rounded-md shadow-lg bg-white lg:w-1/3  md:w-1/2 w-full p-5 mx-auto">
-    <div class="">
+    <div class=" flex flex-row">
       <input [(ngModel)]="search" placeholder="Buscar usuario"  class=" w-full  appearance-none    py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+      <mat-icon *ngIf="search.length > 0" (click)="search = ''" class=" self-center text-gray-400 ">close</mat-icon>
+
     </div>
   </div>
 
